@@ -1,0 +1,1 @@
+T:\VS_Projects\Image Quality Analizer\Image Quality Analizer\bin\ARM\Release\Upload\Image Quality Analizer_0.0.1.0\Image Quality Analizer_0.0.1.0_x86_x64_arm.appxbundle

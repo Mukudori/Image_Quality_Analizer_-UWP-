@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="Image_Quality_Analizer.AcceptHistoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Image_Quality_Analizer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Завершение операции анализа" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <CheckBox x:Name="CheckGalery" Grid.Row="1" Content="Сохранить в галерее приложения" VerticalAlignment="Top" Margin="10" />
+        <Grid x:Name="Grid1" Grid.Row="1" Margin="0,35">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="FolderBox" Grid.Row="0" Grid.ColumnSpan="2" Text="Название папки"  Height="10" Margin="10" Visibility="Collapsed" />
+            <Button Grid.Row="1" Grid.Column="1" Content="Вставить дату/время" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Visibility="Collapsed"/>
+            <CheckBox x:Name="CheckSaveUnaccepted" Grid.Row="1" Content="Сохранить не принятые" VerticalAlignment="Top" Margin="10"/>
+        </Grid>       
+
+        <CheckBox x:Name="CheckExport" Grid.Row="2" Content="Экспортировать" Margin="10" VerticalAlignment="Top"/>
+        <TextBox x:Name="ExportBox" Grid.Row="2" Text="Название папки" Height="10" Margin="10" IsReadOnly="True"/>
+        <Button Click="FolderDialogClick" Grid.Row="2" Content="Указать папку" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10"/>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Отменить" Grid.Column="0" Margin="10" HorizontalAlignment="Center"/>
+            <Button Content="Завершить" Grid.Column="1" Margin="10" Click="EndAndAccept" HorizontalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Page>
