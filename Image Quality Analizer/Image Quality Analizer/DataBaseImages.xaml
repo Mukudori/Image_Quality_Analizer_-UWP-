@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="Image_Quality_Analizer.DataBaseImages"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Image_Quality_Analizer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBox Name="nameBox" PlaceholderText="Введите Название" Margin="10" />
+            <TextBox Name="priceBox" PlaceholderText="Введите JQ" Margin="10" />
+            <ComboBox x:Name="historiesList" DisplayMemberPath="dateTime" SelectedValuePath="id"
+                    Margin="10" PlaceholderText="Выберите Историю"  SelectionChanged="historiesList_SelectionChanged" />
+            <Button Content="Добавить" Click="Add_Click" Margin="10" />
+            <Button Content="Назад" Click="BackClick" Margin="10" HorizontalAlignment="Right"/>
+            <Button Content="Удалить" Click="DeleteClick" Margin="10" HorizontalAlignment="Right"/>
+        </StackPanel>
+        <ListView x:Name="imagesList" Grid.Row="1" Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate  x:DataType="local:ImagesTable">
+                    <StackPanel>
+                        <TextBlock FontSize="16" Text="{x:Bind id}" />
+                        <TextBlock FontSize="16" Text="{x:Bind name}" FontWeight="Bold"  />
+                        <TextBlock FontSize="16" Text="{x:Bind format}" />
+                        <TextBlock FontSize="16" Text="{x:Bind pathInport}" />
+                        <TextBlock FontSize="16" Text="{x:Bind pathLocal}" />
+                        <TextBlock FontSize="16" Text="{x:Bind pathExport}" />                        
+                        <TextBlock FontSize="16" Text="{x:Bind HistoryTable.dateTime}" />
+                        <TextBlock FontSize="16" Text="{x:Bind jq}" />
+                        <TextBlock FontSize="16" Text="{x:Bind blur}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+    
+</Page>

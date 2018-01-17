@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="Image_Quality_Analizer.VIewHistoryInformationFromDB"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Image_Quality_Analizer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Информация о операции оценки" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20"/>
+
+        <TextBlock Text="id" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" FontSize="17"/>
+        <TextBlock x:Name="id" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="5"/>
+
+        <TextBlock Text="Дата/Время" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" FontSize="17"/>
+        <TextBlock x:Name="dateTime" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Margin="5"/>
+
+        <TextBlock Text="Минимальное JQ" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" FontSize="17" TextWrapping="Wrap"/>
+        <TextBlock x:Name="minJQ" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="5"/>
+
+        <TextBlock Text="Максимальное JQ" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" FontSize="17" TextWrapping="Wrap"/>
+        <TextBlock x:Name="maxJQ" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Margin="5"/>
+
+        <TextBlock Text="Минимальная четкость" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" FontSize="17" TextWrapping="Wrap"/>
+        <TextBlock x:Name="minBlur" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="5"/>
+
+        <TextBlock Text="Максимальная четкость" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" FontSize="17" TextWrapping="Wrap"/>
+        <TextBlock x:Name="maxBlur" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Margin="5"/>
+
+        <CheckBox x:Name="CopyToGalery" Content="Скопировано в галерею" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" IsEnabled="False"/>
+
+        <TextBlock Text="Количество оцененных изображений" Grid.Row="8" Grid.Column="0" FontWeight="Bold" Margin="5" FontSize="17" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBlock x:Name="allCount" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" FontSize="17"/>
+       
+        <TextBlock Text="Количество принятых изображений" Grid.Row="9" Grid.Column="0" FontWeight="Bold" Margin="5" FontSize="17" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBlock x:Name="acceptCount" Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" FontSize="17"/>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Вывод списка изображений" Icon="Pictures" Click="ViewImages_Click"/>
+            <AppBarButton Label="Удалить все привязанные изображения" Icon="Delete" />
+            <AppBarButton Label="Назад" Icon="Back" Click="Back_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
